@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>mlTex by MGApcDev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">mlTex</h1>
+      <h2 class="project-tagline">mlTex beautiful typeset documents for the web by the web</h2>
+      <a href="https://github.com/MGApcDev/mlTex" class="btn">View on GitHub</a>
+      <a href="https://github.com/MGApcDev/mlTex/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/MGApcDev/mlTex/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="mltex--" class="anchor" href="#mltex--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>mlTex <a href="https://travis-ci.org/MGApcDev/mlTex"><img src="https://travis-ci.org/MGApcDev/mlTex.svg?branch=master" alt="Build Status"></a> <a href="https://www.codacy.com/app/mgapcdev/mlTex?utm_source=github.com&amp;amp;utm_medium=referral&amp;amp;utm_content=MGApcDev/mlTex&amp;amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/c098136ef81345b78c480ee695314a21" alt="Codacy Badge"></a>
+</h1>
+
+<p>mlTex is a Javascript library to render high quality typesetting in html and pdf.</p>
+
+<p>This library is intended as an improvement on LaTex, allowing users to write professional documents in markup.</p>
+
+<h2>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h2>
+
+<h4>
+<a id="pre-release" class="anchor" href="#pre-release" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pre release:</h4>
+
+<p>Get the code</p>
+
+<div class="highlight highlight-source-shell"><pre>$ git clone https://github.com/MGApcDev/mlTex.git your-project</pre></div>
+
+<p>Go into the folder</p>
+
+<div class="highlight highlight-source-shell"><pre>$ <span class="pl-c1">cd</span> your-project</pre></div>
+
+<p>Make an index.html file using your favorite editor (<i>use this template for full documents</i>)</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;!DOCTYPE html&gt;
+&lt;<span class="pl-ent">html</span>&gt;
+&lt;<span class="pl-ent">head</span>&gt;
+    &lt;<span class="pl-ent">meta</span> <span class="pl-e">charset</span>=<span class="pl-s"><span class="pl-pds">"</span>UTF-8<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>/src/styles/build/main.min.css<span class="pl-pds">"</span></span>&gt;
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/src/scripts/build/main.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>/dependencies/MathJax/MathJax.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">    &lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">        <span class="pl-smi">mlTex</span>.<span class="pl-en">run</span>();</span>
+<span class="pl-s1">    &lt;/<span class="pl-ent">script</span>&gt;</span>
+    <span class="pl-c">&lt;!-- add scripts that should not be removed by mlTex here --&gt;</span>
+&lt;/<span class="pl-ent">head</span>&gt;
+&lt;<span class="pl-ent">body</span>&gt;
+    <span class="pl-c">&lt;!-- your document --&gt;</span>
+&lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+
+<p>Start a local server (to make sure all features work as intended)</p>
+
+<ul>
+<li>
+<p>Mac and Linux users</p>
+
+<p>Open terminal and run <code>$ python -m SimpleHTTPServer</code> and go to localhost:8000 in your browser</p>
+</li>
+<li>
+<p>Windows users (2 options)</p>
+
+<p>Install the <a href="http://brackets.io/">Backets editor</a> and user it's one click live preview to start a server</p>
+
+<p><i>or</i></p>
+
+<p>Install the <a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide">Bash on Windows</a> and run the same command as linux users <code>$ python -m SimpleHTTPServer</code> and go to localhost:8000 in your browser</p>
+</li>
+</ul>
+
+<h2>
+<a id="developers" class="anchor" href="#developers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developers</h2>
+
+<p>Install node modules (make sure you have <a href="https://nodejs.org/en/">nodejs</a> installed)</p>
+
+<p>Install gulp (use <code>sudo</code> if it doesn't work)</p>
+
+<div class="highlight highlight-source-shell"><pre>$ npm install -g gulp</pre></div>
+
+<p>Install node modules (use <code>sudo</code> if it doesn't work)</p>
+
+<div class="highlight highlight-source-shell"><pre>$ npm install</pre></div>
+
+<p>Recompile js and scss files</p>
+
+<div class="highlight highlight-source-shell"><pre>$ gulp</pre></div>
+
+<h2>
+<a id="contributions" class="anchor" href="#contributions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributions</h2>
+
+<ol>
+<li>Fork it!</li>
+<li>Create your feature branch: <code>git checkout -b my-new-feature</code>
+</li>
+<li>Commit your changes: <code>git commit -am 'Add some feature'</code>
+</li>
+<li>Push to the branch: <code>git push origin my-new-feature</code>
+</li>
+<li>Submit a pull request <g-emoji alias="smile" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" ios-version="6.0">😄</g-emoji>
+</li>
+</ol>
+
+<h2>
+<a id="typesetting" class="anchor" href="#typesetting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Typesetting</h2>
+
+<ul>
+<li>Font Kerning</li>
+</ul>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Table of contents</li>
+<li>Latex equivalent font</li>
+<li>Images and captions, w/ auto-numbering</li>
+<li>Including html files into html files</li>
+<li>Tables</li>
+<li>Page setup w/ size, header, footer, page numbering</li>
+<li>Sections, w/ auto-numbering</li>
+<li>Links to websites and page locations</li>
+</ul>
+
+<h2>
+<a id="sources" class="anchor" href="#sources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sources</h2>
+
+<ul>
+<li><a href="http://www.troytempleman.com/2010/02/08/basic-rules-of-good-typography/">Basic Rules of Good Typography</a></li>
+</ul>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<ul>
+<li>
+<strong>jQuery</strong> --&gt; <a href="https://jquery.com/">jQuery write less, do more</a>
+</li>
+<li>
+<strong>Font</strong> --&gt; <a href="http://checkmyworking.com/cm-web-fonts/">Computer Modern on the web by CheckMyWorking.com</a>
+</li>
+<li>
+<strong>Math</strong> --&gt; <a href="https://www.mathjax.org/">MathJax, Beautiful math in all browsers</a>
+</li>
+<li>
+<strong>Spinner</strong> --&gt; <a href="http://codepen.io/ikoshowa/pen/qOMvpy">#Codevember - Day 6 - Bookshelf loader by Grélard Antoine</a>
+</li>
+</ul>
+
+<h2>
+<a id="special-thanks" class="anchor" href="#special-thanks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Special Thanks</h2>
+
+<ul>
+<li>
+<a href="https://www.linkedin.com/in/frederikmadsen/da">Frederik Madsen</a> for inspiration and help with some of the code</li>
+</ul>
+
+<hr>
+
+<p>Copyright © 2016 Mathias Grundtvig Andreasen (MGApcDev). Licensed under the terms of the <a href="LICENSE.md">GPLv3 license</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/MGApcDev/mlTex">mlTex</a> is maintained by <a href="https://github.com/MGApcDev">MGApcDev</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
